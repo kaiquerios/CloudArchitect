@@ -4,30 +4,57 @@
     box-shadow: 0 0 15px rgba(255, 153, 0, 0.25); 
 }
 
+.glow-cyan {
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.15);
+}
+
 /* Transições suaves para interações */
 button, a, input, textarea {
     transition: all 0.2s ease-in-out;
 }
 
-/* Scrollbar personalizada para blocos de código e tabelas */
+/* Animações customizadas para Modais e Cards */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleUp {
+    from { opacity: 0; transform: scale(0.96); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scaleUp {
+    animation: scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Scrollbar personalizada para blocos de código e containers */
 pre::-webkit-scrollbar,
-textarea::-webkit-scrollbar {
+textarea::-webkit-scrollbar,
+.custom-scrollbar::-webkit-scrollbar {
     width: 6px;
     height: 6px;
 }
 
 pre::-webkit-scrollbar-track,
-textarea::-webkit-scrollbar-track {
+textarea::-webkit-scrollbar-track,
+.custom-scrollbar::-webkit-scrollbar-track {
     background: #080C14;
 }
 
 pre::-webkit-scrollbar-thumb,
-textarea::-webkit-scrollbar-thumb {
+textarea::-webkit-scrollbar-thumb,
+.custom-scrollbar::-webkit-scrollbar-thumb {
     background: #222F47;
     border-radius: 4px;
 }
 
 pre::-webkit-scrollbar-thumb:hover,
-textarea::-webkit-scrollbar-thumb:hover {
+textarea::-webkit-scrollbar-thumb:hover,
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
     background: #FF9900;
 }
